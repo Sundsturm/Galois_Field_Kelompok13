@@ -19,7 +19,7 @@ begin
         if rst = '1' then
             current_state <= A;
         elsif (clk'event and clk = '1') then
-		current_state <= next_state;
+	    current_state <= next_state;
         end if;
     end process;
 
