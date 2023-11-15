@@ -19,7 +19,7 @@ begin
         if rst = '1' then
             current_state <= A;
         elsif (clk'event and clk = '1') then
-			current_state <= next_state;
+		current_state <= next_state;
         end if;
     end process;
 
@@ -27,32 +27,32 @@ begin
     begin
         case current_state is
             when A =>
-				enable <= '0';
-				sel <= '0';
+		enable <= '0';
+		sel <= '0';
                 if (op = '1') then 
                     next_state <= B; 
                 else 
-					next_state <= C;
+		    next_state <= C;
                 end if;
                 
             when B =>
-				enable <= '0';
-				sel <= '0';         
-				next_state <= D;
+		enable <= '0';
+		sel <= '0';         
+		next_state <= D;
 
             when D =>
-				enable <= '0';
-				sel <= '1';
+		enable <= '0';
+		sel <= '1';
                 if (comp = '1') then 
                     next_state <= D; 
                 else 
-					next_state <= C;
+		    next_state <= C;
                 end if;
 
             when C =>
-				enable <= '1';
-				sel <= '1';         
-				next_state <= A;
+		enable <= '1';
+		sel <= '1';         
+		next_state <= A;
         end case;
     end process;
 end Behavioral;
