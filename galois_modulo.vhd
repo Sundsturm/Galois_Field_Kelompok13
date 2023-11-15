@@ -45,12 +45,10 @@ process(temp_A, temp_P, difference, temp_result, temp_shift)
 	variable counter	: integer := 0; 
 begin
 	if difference > 0 then
-		while (k < difference) and (temp_shift /= "00000000000000000000000000000000") loop
+		for j in 0 to 16 loop
+			exit when j = difference;
 			temp_shift <= temp_P(30 downto 0) & '0';
-			k := k + 1;
-			counter := counter + 1;
 		end loop;
-		assert counter < 10000 report "Error: Loop did not terminate within 10,000 iterations" severity failure;
 		temp_result <= temp_A xor temp_shift;
 	elsif (difference <= 0) then
 		temp_result <= temp_A xor temp_P;
