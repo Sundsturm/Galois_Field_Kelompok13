@@ -31,8 +31,11 @@ begin
                     else
                         prime <= '1'; -- Input is prime
                     end if;
-            n <= n + 1;
-			end if;
+	if n = 2 then
+        	n <= n+1;
+	else
+		n <= n+2;
+	end if;
         end if;
     
     if input_number = 1 or input_number = 0 then
