@@ -4,13 +4,13 @@ USE ieee.numeric_std.all;
 USE ieee.std_logic_unsigned.all;
 use work.all;
 
-entity galois_multiply is port (
+entity galois_multiplus is port (
 	A, B	: in integer range 0 to 65536;
 	mode	: in std_logic_vector(0 downto 0);
 	res		: out integer range 0 to 131072);
-end galois_multiply;
+end galois_multiplus;
 
-architecture behavioral of galois_multiply is
+architecture behavioral of galois_multiplus is
 	signal num_A	: std_logic_vector(31 downto 0);
 	signal num_B	: std_logic_vector(31 downto 0);
 	signal op		: integer;
