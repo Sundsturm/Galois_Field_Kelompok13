@@ -8,7 +8,7 @@ use work.all;
 entity cek_prima is
     Port ( clk : in STD_LOGIC;
            rst : in STD_LOGIC;
-           input_number : in integer range 0 to 65536;
+           input_number : in integer range 0 to 131071;
            is_prime : out STD_LOGIC);
 end cek_prima;
 

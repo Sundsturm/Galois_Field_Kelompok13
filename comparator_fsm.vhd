@@ -4,8 +4,8 @@ use IEEE.STD_LOGIC_ARITH.ALL;
 use IEEE.STD_LOGIC_UNSIGNED.ALL;
 
 entity comparator_fsm is port (
-	A		: in integer range 0 to 4294967296;
-	m		: in integer range 0 to 131072;
+	A		: in integer range 0 to 2147483646;
+	m		: in integer range 0 to 131071;
 	comp	: out std_logic_vector(0 downto 0));
 end comparator_fsm;
 

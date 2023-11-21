@@ -6,10 +6,10 @@ use work.all;
 
 entity galois_multiplus is port (
 	clk					: in std_logic;
-	A, B				: in integer range 0 to 65536;
+	A, B				: in integer range 0 to 65535;
 	mode				: in std_logic_vector(0 downto 0);
-	res_addition		: out integer range 0 to 65536;
-	res_multiply		: out integer range 0 to 131072);
+	res_addition		: out integer range 0 to 65535;
+	res_multiply		: out integer range 0 to 131071);
 end galois_multiplus;
 
 architecture behavioral of galois_multiplus is
