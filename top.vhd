@@ -93,7 +93,7 @@ signal r_demux2: integer range 0 to 65536;
 signal r_mux: integer range 0 to 65536; 
 begin 
 	-- alur data 
-	X_COM: comparator_fsm port map(r_mux, m, r_com); 
+	X_COM: comparator_fsm port map(r_muxatas, m, r_com); 
 	X_MULT: galois_multiplus port map(clk, A, B, Op, r_add, r_mult); 
 	X_MUX3216: mux3216 port map(rst, r_sel, r_mult, r_demux1, r_muxatas);
 	X_FSM: fsm port map(clk, rst, Op, r_com, r_enable, r_sel); 
