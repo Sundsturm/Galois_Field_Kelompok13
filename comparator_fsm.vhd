@@ -11,11 +11,12 @@ end comparator_fsm;
 
 architecture behavioral of comparator_fsm is
 	begin
-	process(A, P)
+	process(A, m)
+	begin
 	if A >= m then
-		comp <= '1';
+		comp <= "1";
 	else
-		comp <= '0';
+		comp <= "0";
 	end if;
 	end process;
 end behavioral;
