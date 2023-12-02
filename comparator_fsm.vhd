@@ -10,25 +10,13 @@ entity comparator_fsm is port (
 end comparator_fsm;
 
 architecture behavioral of comparator_fsm is
-	signal m_num : integer;
+	
+	signal m_num : integer := 0;
+	
 	begin
 	process(A, m_num)
-	--Function to count 2^m
-	impure function powerOf (number : integer := 0) return integer is
-		variable output : integer := 0;
 	begin
-		for i in 1 to m loop
-			if i = 1 then
-				output := 2;
-			else
-				output := output * 2;
-			end if;
-		end loop;
-		return output;
-	end function;
-
-	begin
-	m_num <= powerOf(number => m);
+	m_num <= (2)**(m);
 	if A >= m_num then
 		comp <= "1";
 	else
