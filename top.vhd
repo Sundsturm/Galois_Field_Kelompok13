@@ -9,7 +9,7 @@ entity top is
 		rst, clk: in std_logic; 
 		Op: in std_logic_vector(0 downto 0);
 		P: in integer range 0 to 131072;
-		m: in integer range 0 to 131071;
+		m: in integer range 0 to 16;
 		res : out integer range 0 to 65536 
 	); 
 end top;
@@ -19,7 +19,7 @@ architecture behavioral of top is
 component comparator_fsm is 
 	port( 
 		A		: in integer range 0 to 2147483646;
-		m		: in integer range 0 to 131071;
+		m		: in integer range 0 to 16;
 		comp	: out std_logic_vector(0 downto 0)
 	);
 end component; 
